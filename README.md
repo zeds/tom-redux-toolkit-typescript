@@ -1,5 +1,5 @@
 # tom-redux-toolkit-typescript
 
-React
-Typescript
-tailwindcss
+React<br>
+Typescript<br>
+tailwindcss<br>
