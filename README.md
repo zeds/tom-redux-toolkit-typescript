@@ -18,17 +18,19 @@ react-reduxも必要？<br>
 　下層のコンポーネントにStoreが適用される<br>
 <br>
 5.Create a Redux State Slice<br>
-  src/features/counter/counterSlice.js ← .tsに変更予定<br>
-	CounterState 型を定義<br>
-	initialState 値を設定<br>
-	createSliceを呼び出し<br>
-	reducer関数を作成（increment/decrement)<br>
-	actionを外部から呼び出せるようになる<br>
+　src/features/counter/counterSlice.js ← .tsに変更予定<br>
+　CounterState 型を定義<br>
+　initialState 値を設定<br>
+　createSliceを呼び出し<br>
+　reducer関数を作成（increment/decrement)<br>
+　actionを外部から呼び出せるようになる<br>
+<br>
 6.Add Slice Reducers to the Store<br>
-  app/stores.js<br>
-	reducer関数をStoreに登録する。<br>
+　app/stores.js<br>
+　reducer関数をStoreに登録する。<br>
+<br>
 7.Use Redux State and Actions in React Components<br>
-  React-Redux hooksを使う。←なんのこっちゃない、componentからstoreを使えるようにする意味。<br>
+　React-Redux hooksを使う。←なんのこっちゃない、componentからstoreを使えるようにする意味。<br>
 　componentではuserSelectorで値を読み込み、useDispatchで値を登録する。<br>
 　src/features/counter/Counter.tsx<br>
 <br>
