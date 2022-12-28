@@ -8,20 +8,28 @@ https://redux-toolkit.js.org/tutorials/quick-start<br>
 <br>
 react-reduxも必要？<br>
 <br>
-2.src/app/stores.jsを作成<br>
+2.src/app/stores.tsを作成<br>
 <br>
 3.ChromeにRedux DevTools extensionをインストール<br>
 <br>
 4.Provide the Redux Store to React<br>
-　src/index.jsを作成<br>
-　作成したstoreをProviderに指定して、ROOTで読み込む。<br>
-　下層のコンポーネントにStoreが適用される<br>
+　src/index.tsxを作成<br>
+　作成したstoreをProviderに指定して、element rootで読み込む。<br>
+　これにより、下層のコンポーネントにStoreが適用される<br>
+/* ReactDOM.render is no longer supported in React 18.
+Use createRoot instead. Until you switch to the new API,
+your app will behave as if it's running React 17.
+Learn more:
+https://reactjs.org/link/switch-to-createroot
+*/
+
 <br>
 5.Create a Redux State Slice<br>
-　src/features/counter/counterSlice.js ← .tsに変更予定<br>
+　src/features/counter/counterSlice.ts<br>
 　CounterState 型を定義<br>
 　initialState 値を設定<br>
-　createSliceを呼び出し<br>
+　counterSlice関数をcreateSliceで作成<br>
+　counterSlice内にactionがある（ActionCreatorがなくなった）<br>
 　reducer関数を作成（increment/decrement)<br>
 　actionを外部から呼び出せるようになる<br>
 <br>
