@@ -35,7 +35,7 @@ https://reactjs.org/link/switch-to-createroot
 　actionを外部から呼び出せるようになる<br>
 <br>
 6.Add Slice Reducers to the Store<br>
-　app/stores.js<br>
+　app/stores.tsx<br>
 　reducer関数をStoreに登録する。<br>
 <br>
 7.Use Redux State and Actions in React Components<br>
