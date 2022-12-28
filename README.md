@@ -43,9 +43,6 @@ https://reactjs.org/link/switch-to-createroot
 　componentではuserSelectorで値を読み込み、useDispatchで値を登録する。<br>
 　src/features/counter/Counter.tsx<br>
 <br>
-index.htmlはsrc/index.tsxを呼び出す<br>
-index.tsxは、App.tsxを呼び出す<br>
-App.tsxは、<Counter />を描画する<br>
 
 
 
