@@ -1,10 +1,10 @@
-import { TodoPage } from './features/todos/pages/TodoPage';
+import { Counter } from './features/counter/Counter';
 
 function App() {
   return (
-    <>
-      <TodoPage />
-    </>
+    <div>
+      <Counter />
+    </div>
   );
 }
 
