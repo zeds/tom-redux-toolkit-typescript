@@ -16,12 +16,13 @@ react-reduxも必要？<br>
 　src/index.tsxを作成<br>
 　作成したstoreをProviderに指定して、element rootで読み込む。<br>
 　これにより、下層のコンポーネントにStoreが適用される<br>
-/* ReactDOM.render is no longer supported in React 18.
+<br>
+ReactDOM.render is no longer supported in React 18.
 Use createRoot instead. Until you switch to the new API,
 your app will behave as if it's running React 17.
 Learn more:
 https://reactjs.org/link/switch-to-createroot
-*/
+<br>
 
 <br>
 5.Create a Redux State Slice<br>
