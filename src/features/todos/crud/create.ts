@@ -1,11 +1,15 @@
-import { v4 as uuidv4 } from 'uuid';
 import type { Todo, TodoInput } from '../types';
+import { v4 as uuidv4 } from 'uuid';
+import { getCurrentDateTime } from '../utils/date';
 
 export const createTodo = (input: TodoInput): Todo => {
   return {
-    // https://github.com/uuidjs/uuid#uuidv4options-buffer-offset
-    id: uuidv4(),
+    id: input.id ?? uuidv4(),
     title: input.title,
-    completed: false,
+    body: input.body,
+    status: input.status ?? 'waiting',
+    createdAt: input.createdAt || getCurrentDateTime(),
+    updatedAt: input.updatedAt,
+    deletedAt: input.deletedAt,
   };
 };

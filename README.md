@@ -1,9 +1,6 @@
-# tom-redux-toolkit-typescript
-
-Vite<br>
-React<br>
-Typescript<br>
-tailwindcss<br>
+day3<br>
 <br>
-このブランチが上記をインストールした直後の状態です。<br>
-まだreduxはインストールしていません。
+https://redux-toolkit-seminar-learning-materials.vercel.app/docs/category/day3<br>
+<br>
+削除ボタンをクリックでModalを表示する。<br>
+Okayで該当レコードを論理削除する

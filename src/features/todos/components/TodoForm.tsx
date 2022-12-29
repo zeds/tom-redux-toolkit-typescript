@@ -1,48 +1,72 @@
 import { useState, FC } from 'react';
-import { createTodo } from '../crud/create';
-import type { Todo, TodoInput } from '../types';
+import type { TodoInput } from '../types';
+import { useAppDispatch } from '../../../app/hooks';
+import { create } from '../todosSlice';
 
-type Props = {
-  onSubmit: (todo: Todo) => void;
-};
-
-export const TodoForm: FC<Props> = ({ onSubmit }) => {
-  const [input, setInput] = useState<TodoInput>({
+export const TodoForm: FC = () => {
+  const [todoInput, setTodoInput] = useState<TodoInput>({
     title: '',
+    body: '',
   });
 
-  const onSubmitHandler: React.FormEventHandler<HTMLFormElement> = (event) => {
-    event.preventDefault();
-    if (!input.title) {
-      alert('タイトルを入力してください');
-      return;
-    }
-
-    const todo = createTodo(input);
-    onSubmit(todo);
-    setInput({
-      title: '',
-    });
-  };
+  const dispatch = useAppDispatch();
 
   const onChangeHandler: React.ChangeEventHandler<HTMLInputElement> = (
     event
   ) => {
-    setInput({
-      title: event.target.value,
+    setTodoInput({
+      ...todoInput,
+      [event.target.name]: event.target.value,
     });
   };
 
+  const onSubmitHandler: React.FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    try {
+      dispatch(create(todoInput));
+      setTodoInput({
+        title: '',
+        body: '',
+      });
+      // input:textにあたっているフォーカスを解除
+      // エンターキーでTodoを追加したときの対処
+      const activeElement = document.activeElement;
+      if (!activeElement) return;
+      (activeElement as HTMLInputElement).blur();
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   return (
-    <form method="post" onSubmit={onSubmitHandler}>
-      <label htmlFor="inputTitle">タイトル : </label>
-      <input
-        id="inputTitle"
-        type="text"
-        value={input.title}
-        onChange={onChangeHandler}
-      />
-      <input className="p-3 bg-blue-300 rounded m-3 border border-blue-500 cursor-pointer" type="submit" value="作成" />
+    <form className="bg-green-200 p-2" onSubmit={onSubmitHandler} method="post">
+      <div className="mb-2">
+        <label>
+          タイトル :{' '}
+          <input
+            onChange={onChangeHandler}
+            type="text"
+            name="title"
+            value={todoInput.title}
+          />
+        </label>
+      </div>
+      <div className="mb-2">
+        <label>
+          本文 :{' '}
+          <input
+            onChange={onChangeHandler}
+            type="text"
+            name="body"
+            value={todoInput.body}
+          />
+        </label>
+      </div>
+      <div>
+        <input className="bg-blue-500 p-2 rounded text-white hover:bg-blue-300 cursor-pointer" type="submit" value="作成" />
+      </div>
     </form>
   );
 };
+
+export default TodoForm;
