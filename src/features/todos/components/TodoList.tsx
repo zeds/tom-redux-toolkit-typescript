@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { useAppDispatch } from '../../../app/hooks';
 import { remove, update, restore } from '../todosSlice';
 import { Todo } from '../types';
+import { openModal } from '../../modal/modalSlice'
 
 type Props = {
   todos: Todo[];
@@ -74,7 +75,8 @@ export const TodoList: FC<Props> = ({ todos }) => {
                     ) : (
                       <button className="bg-red-600 p-2 rounded"
                         onClick={() => {
-                          dispatch(remove(todo.id));
+													//todo.idはstring
+                          dispatch(openModal(todo.id));
                         }}
                       >
                         削除

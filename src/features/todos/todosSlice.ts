@@ -4,16 +4,6 @@ import type { RootState } from '../../app/store';
 import type { TodoInput, Todo, TodoId, TodoUpdatePayload } from './types';
 import { createTodo, removeTodo, updateTodo, restoreTodo } from './crud';
 
-
-
-//debug
-//[
-//	{id: 0, title: 'a', body: '', status: 'waiting', createdAt: '2022-12-20 00:00:00', updatedAt: '2022-12-20 00:00:00', deletedAt: null},
-//	{id: 1, title: 'b', body: '', status: 'waiting', createdAt: '2022-12-20 00:00:00', updatedAt: '2022-12-20 00:00:00', deletedAt: null},
-//	{id: 2, title: 'c', body: '', status: 'waiting', createdAt: '2022-12-20 00:00:00', updatedAt: '2022-12-20 00:00:00', deletedAt: null},
-//	{id: 3, title: 'd', body: '', status: 'waiting', createdAt: '2022-12-20 00:00:00', updatedAt: '2022-12-20 00:00:00', deletedAt: null},
-//]
-
 export type TodoState = {
   todos: Todo[];
 };

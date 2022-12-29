@@ -1,3 +1,4 @@
+//idにはuuidで作成されるので、string
 export type TodoId = string;
 
 export type DateTime = string;
