@@ -1,9 +1,11 @@
-day2<br>
+day3<br>
 <br>
-https://redux-toolkit-seminar-learning-materials.vercel.app/docs/day2/redux-toolkit
-<br>
-課題内容は、「Quick Start」で実装したコードに、以下の機能を追加することです。<br>
-<br>
-Redux Toolkit の createAsyncThunk を使って、非同期で 1 秒遅れでカウントを +1 する機能を実装する
-<br>
-src/app/hooks.tsも追加している
+https://redux-toolkit-seminar-learning-materials.vercel.app/docs/category/day3<br>
+
+新規作成<br>
+一覧表示<br>
+論理削除<br>
+更新<br>
+復元<br>
+
+

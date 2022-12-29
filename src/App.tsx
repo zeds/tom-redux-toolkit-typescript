@@ -1,11 +1,12 @@
-import { Counter } from './features/counter/Counter';
+import type { FC } from 'react';
+import { TodoContainer } from './features/todos/components/TodoContainer';
 
-function App() {
+const App: FC = () => {
   return (
     <div>
-      <Counter />
+      <TodoContainer />
     </div>
   );
-}
+};
 
 export default App;
