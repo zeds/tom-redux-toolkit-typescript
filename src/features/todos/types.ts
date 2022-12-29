@@ -1,13 +1,38 @@
-export type Todo = {
-  id: string;
+//idにはuuidで作成されるので、string
+export type TodoId = string;
+
+export type DateTime = string;
+
+const TODO_STATUSES = [
+  'waiting',
+  'working',
+  'pending',
+  'discontinued',
+  'completed',
+] as const;
+export type TodoStatus = typeof TODO_STATUSES[number];
+
+export type TodoInput = {
+  id?: TodoId;
   title: string;
-  completed: boolean;
+  body: string;
+  status?: TodoStatus;
+  createdAt?: DateTime;
+  updatedAt?: DateTime;
+  deletedAt?: DateTime;
 };
 
-// Pickの参考記事
-// https://typescriptbook.jp/reference/type-reuse/utility-types/pick
-export type TodoInput = Pick<Todo, 'title'>;
+export type Todo = {
+  id: TodoId;
+  title: string;
+  body: string;
+  status: TodoStatus;
+  createdAt: DateTime;
+  updatedAt?: DateTime;
+  deletedAt?: DateTime;
+};
 
-// Partialの参考記事
-// https://typescriptbook.jp/reference/type-reuse/utility-types/partial
-export type TodoUpdateInput = Pick<Todo, 'id'> & Partial<Todo>;
+export type TodoUpdatePayload = {
+  id: TodoId;
+  input: Partial<TodoInput>;
+};
