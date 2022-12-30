@@ -1,4 +1,4 @@
-//idにはuuidで作成されるので、string
+//idにはnanoid()で作成されたstringになります。
 export type TodoId = string;
 
 export type DateTime = string;
