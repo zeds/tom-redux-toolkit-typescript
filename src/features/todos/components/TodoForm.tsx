@@ -44,6 +44,7 @@ export const TodoForm: FC = () => {
         <label>
           タイトル :{' '}
           <input
+						autoFocus
             onChange={onChangeHandler}
             type="text"
             name="title"
