@@ -4,7 +4,7 @@ import { Reaction } from './reactionType'
 import { sub } from 'date-fns'
 
 
-/**
+
 const initialState: Post[] = [
 	{
 		id: '1',
@@ -36,13 +36,13 @@ const initialState: Post[] = [
 	}
 ]
 
-**/
 
-const initialState = {
-	posts: [],
-	status: 'idle',	// idle loading succeeded failed
-	error: null
-}
+
+//const initialState = {
+//	posts: [],
+//	status: 'idle',	// idle loading succeeded failed
+//	error: null
+//}
 
 //const postsSlice = createSlice({
 //	name: 'posts',
